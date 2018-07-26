@@ -1,8 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.bean.ProductCategory;
-import com.example.demo.dao.ProductCategoryRepository;
-import com.example.demo.mapper.ProductCategoryMapper;
+import com.example.demo.repository.ProductCategoryRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

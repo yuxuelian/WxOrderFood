@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import lombok.Data;
+
 @Entity
+@Data
 public class OrderDetail {
 
     @Id
@@ -16,69 +19,5 @@ public class OrderDetail {
     private double productPrice;
     private long productQuantity;
     private String productIcon;
-
-
-    public String getDetailId() {
-        return detailId;
-    }
-
-    public void setDetailId(String detailId) {
-        this.detailId = detailId;
-    }
-
-
-    public String getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(String orderId) {
-        this.orderId = orderId;
-    }
-
-
-    public String getProductId() {
-        return productId;
-    }
-
-    public void setProductId(String productId) {
-        this.productId = productId;
-    }
-
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
-
-
-    public long getProductQuantity() {
-        return productQuantity;
-    }
-
-    public void setProductQuantity(long productQuantity) {
-        this.productQuantity = productQuantity;
-    }
-
-
-    public String getProductIcon() {
-        return productIcon;
-    }
-
-    public void setProductIcon(String productIcon) {
-        this.productIcon = productIcon;
-    }
-
 
 }
