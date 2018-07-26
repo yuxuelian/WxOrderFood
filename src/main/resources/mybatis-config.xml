@@ -12,5 +12,21 @@
 
         <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
         <setting name="mapUnderscoreToCamelCase" value="true" />
+
+        <!-- 打印sql语句 -->
+        <setting name="logImpl" value="STDOUT_LOGGING" />
     </settings>
+
+    <typeAliases>
+        <typeAlias type="com.example.demo.bean.OrderDetail" alias="OrderDetail" />
+        <typeAlias type="com.example.demo.bean.OrderMaster" alias="OrderMaster" />
+        <typeAlias type="com.example.demo.bean.ProductCategory" alias="ProductCategory" />
+        <typeAlias type="com.example.demo.bean.ProductInfo" alias="ProductInfo" />
+    </typeAliases>
+
+    <databaseIdProvider type="DB_VENDOR">
+        <property name="MySQL" value="mysql" />
+        <property name="Oracle" value="oracle" />
+    </databaseIdProvider>
+
 </configuration>

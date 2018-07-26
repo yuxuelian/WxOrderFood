@@ -2,6 +2,8 @@ package com.example.demo.mapper;
 
 import com.example.demo.bean.ProductCategory;
 
+import java.util.List;
+
 /**
  * @author kaibo
  * @date 2018/7/26 14:43
@@ -14,4 +16,6 @@ public interface ProductCategoryMapper {
 
     int save(ProductCategory productCategory);
 
+    List<ProductCategory> findAll();
 }
+

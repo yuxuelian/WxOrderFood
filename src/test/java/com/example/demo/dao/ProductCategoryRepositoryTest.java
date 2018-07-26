@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -60,6 +61,14 @@ public class ProductCategoryRepositoryTest {
 
 //        ProductCategory save = repository.save(ex);
 //        System.out.println(save);
+    }
+
+    @Test
+    public void findAll(){
+        List<ProductCategory> productCategorys = productCategoryMapper.findAll();
+        for (ProductCategory productCategory : productCategorys) {
+            System.out.println(productCategory);
+        }
     }
 
 }
