@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Yuxuelian-520
+    url: jdbc:mysql://118.126.108.24:3306/wx_order_food?useSSL=false&characterEncode=UTF-8
