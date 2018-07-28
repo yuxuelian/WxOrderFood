@@ -1,7 +1,8 @@
 package com.example.demo.bean;
 
+import java.math.BigDecimal;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -11,13 +12,17 @@ import lombok.Data;
 public class ProductInfo {
 
     @Id
-    @GeneratedValue
     private String productId;
+    /**
+     * 商品名字
+     */
     private String productName;
-    private double productPrice;
-    private long productStock;
+    private BigDecimal productPrice;
+    private Integer productStock;
     private String productDescription;
     private String productIcon;
-    private long categoryType;
+
+    private Integer productStatus;
+    private Integer categoryType;
 
 }

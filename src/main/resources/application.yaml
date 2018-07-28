@@ -1,3 +1,8 @@
+#所有请求的前缀
+server:
+  servlet:
+    context-path: /sell
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
@@ -15,4 +20,5 @@ mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.example.demo.bean
+
 
