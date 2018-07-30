@@ -1,6 +1,7 @@
 package com.example.demo.error;
 
 import com.example.demo.enums.ResultCodeEnum;
+import com.example.demo.exception.ResultException;
 import com.example.demo.result.BaseResult;
 
 import org.springframework.ui.Model;
@@ -27,6 +28,10 @@ public class ErrorControllerAdvice {
     @ResponseBody
     public String handlerError(Exception ex, HandlerMethod handlerMethod) {
         ex.printStackTrace();
+        if (ex instanceof ResultException) {
+            //已知异常的情况下
+            return BaseResult.ofError(((ResultException) ex).getResultCodeEnum()).toString();
+        }
         return BaseResult.ofError(ResultCodeEnum.SERVICE_ERROR).toString();
     }
 

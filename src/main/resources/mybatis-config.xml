@@ -18,10 +18,10 @@
     </settings>
 
     <typeAliases>
-        <typeAlias type="com.example.demo.bean.OrderDetail" alias="OrderDetail" />
-        <typeAlias type="com.example.demo.bean.OrderMaster" alias="OrderMaster" />
-        <typeAlias type="com.example.demo.bean.ProductCategory" alias="ProductCategory" />
-        <typeAlias type="com.example.demo.bean.ProductInfo" alias="ProductInfo" />
+        <typeAlias type="com.example.demo.repository.dao.OrderDetail" alias="OrderDetail" />
+        <typeAlias type="com.example.demo.repository.dao.OrderMaster" alias="OrderMaster" />
+        <typeAlias type="com.example.demo.repository.dao.ProductCategory" alias="ProductCategory" />
+        <typeAlias type="com.example.demo.repository.dao.ProductInfo" alias="ProductInfo" />
     </typeAliases>
 
     <databaseIdProvider type="DB_VENDOR">

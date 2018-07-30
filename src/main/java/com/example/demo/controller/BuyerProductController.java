@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.bean.ProductCategory;
-import com.example.demo.bean.ProductInfo;
+import com.example.demo.repository.dao.ProductCategory;
+import com.example.demo.repository.dao.ProductInfo;
 import com.example.demo.result.BaseResult;
 import com.example.demo.result.ProductInfoResult;
 import com.example.demo.result.ProductResult;
@@ -15,12 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
-
-import jdk.nashorn.internal.objects.annotations.Getter;
 
 /**
  * @author Administrator

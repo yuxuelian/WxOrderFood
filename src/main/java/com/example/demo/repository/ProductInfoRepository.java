@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.bean.ProductInfo;
+import com.example.demo.repository.dao.ProductInfo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -16,6 +16,11 @@ import java.util.List;
 
 public interface ProductInfoRepository extends JpaRepository<ProductInfo, String> {
 
+    /**
+     * 查询指定商品状态的商品列表
+     * @param productStatus
+     * @return
+     */
     List<ProductInfo> findByProductStatus(Integer productStatus);
 
 }

@@ -1,6 +1,6 @@
 package com.example.demo.mapper;
 
-import com.example.demo.bean.ProductCategory;
+import com.example.demo.repository.dao.ProductCategory;
 
 import java.util.List;
 

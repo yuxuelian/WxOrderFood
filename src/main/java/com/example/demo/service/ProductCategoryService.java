@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.bean.ProductCategory;
+import com.example.demo.repository.dao.ProductCategory;
 
 import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;

@@ -1,6 +1,6 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.bean.ProductCategory;
+import com.example.demo.repository.dao.ProductCategory;
 import com.example.demo.repository.ProductCategoryRepository;
 import com.example.demo.service.ProductCategoryService;
 

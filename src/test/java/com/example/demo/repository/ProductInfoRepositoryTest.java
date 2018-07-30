@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.bean.ProductInfo;
+import com.example.demo.repository.dao.ProductInfo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,9 +10,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.util.List;
-import java.util.UUID;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Administrator

@@ -1,6 +1,6 @@
 package com.example.demo.repository;
 
-import com.example.demo.bean.ProductCategory;
+import com.example.demo.repository.dao.ProductCategory;
 import com.example.demo.mapper.ProductCategoryMapper;
 
 import org.junit.Test;

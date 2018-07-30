@@ -14,11 +14,11 @@ spring:
 
 #mybatis.config-location=classpath:mybatis-config.xml
 #mybatis.mapper-locations=classpath:/mapper/**/*.xml
-#mybatis.type-aliases-package=com.example.demo.bean
+#mybatis.type-aliases-package=com.example.demo.repository.dao
 
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:/mapper/*.xml
-  type-aliases-package: com.example.demo.bean
+  type-aliases-package: com.example.demo.repository.dao
 
 

@@ -1,4 +1,6 @@
-package com.example.demo.bean;
+package com.example.demo.repository.dao;
+
+import com.example.demo.enums.ProductStatusEnum;
 
 import java.math.BigDecimal;
 
@@ -17,12 +19,30 @@ public class ProductInfo {
      * 商品名字
      */
     private String productName;
+    /**
+     * 商品单价
+     */
     private BigDecimal productPrice;
+    /**
+     * 商品库存
+     */
     private Integer productStock;
+    /**
+     * 商品描述
+     */
     private String productDescription;
+    /**
+     * 商品图片
+     */
     private String productIcon;
+    /**
+     * 商品状态 0 上架  1下架
+     */
+    private Integer productStatus = ProductStatusEnum.UP.getCode();
 
-    private Integer productStatus;
+    /**
+     * 商品类目(类别)
+     */
     private Integer categoryType;
 
 }
