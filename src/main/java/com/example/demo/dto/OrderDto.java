@@ -1,6 +1,8 @@
 package com.example.demo.dto;
 
 import com.example.demo.repository.dao.OrderDetail;
+import com.example.demo.serializer.DateToLongSerializer;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -15,6 +17,9 @@ import lombok.Data;
  * @email：kaibo1hao@gmail.com
  * @description：
  */
+
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+// 当有值为空的时候不返回到前端  这里不配置  使用全局的配置
 
 @Data
 public class OrderDto {
@@ -49,7 +54,10 @@ public class OrderDto {
      */
     private Integer payStatus;
 
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date createTime;
+
+    @JsonSerialize(using = DateToLongSerializer.class)
     private Date updateTime;
 
     /**

@@ -91,10 +91,14 @@ public class OrderServiceImpl implements OrderService {
 
         //写入订单数据库
         OrderMaster orderMaster = new OrderMaster();
+        //给orderDto,设置orderId返回给上层
+        orderDto.setOrderId(orderId);
         //这个拷贝会覆盖一些变量
         BeanUtils.copyProperties(orderDto, orderMaster);
-        //设置订单id
-        orderMaster.setOrderId(orderId);
+
+        //(无需再设置,上面已经copy进去了)设置订单id
+//        orderMaster.setOrderId(orderId);
+
         //设置订单总价
         orderMaster.setOrderAmount(orderAmount);
 
@@ -145,11 +149,11 @@ public class OrderServiceImpl implements OrderService {
         }
 
         //判断订单详情
-        List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderDto.getOrderId());
-        if (ConnectionUtils.isEmpty(orderDetailList)) {
-            log.info("[取消订单] 订单中无详情! orderDto={}", orderDto);
-            throw new ResultException(ResultCodeEnum.ORDER_DETAIL_EMPTY);
-        }
+//        List<OrderDetail> orderDetailList = orderDetailRepository.findByOrderId(orderDto.getOrderId());
+//        if (ConnectionUtils.isEmpty(orderDetailList)) {
+//            log.info("[取消订单] 订单中无详情! orderDto={}", orderDto);
+//            throw new ResultException(ResultCodeEnum.ORDER_DETAIL_EMPTY);
+//        }
 
         //修改订单状态
         orderMaster.setOrderStatus(OrderStatusEnum.CANCEL.getCode());
@@ -162,6 +166,7 @@ public class OrderServiceImpl implements OrderService {
             return cartDto;
         }).collect(Collectors.toList());
         productInfoService.increaseStock(cartDtoList);
+
         //已付款的订单需要退款
         if (orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
             //TODO 退款逻辑
@@ -171,6 +176,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
+    @Transactional(rollbackFor = RuntimeException.class)
     public OrderDto finish(OrderDto orderDto) {
         //查询订单
         OrderMaster orderMaster = orderMasterRepository.findById(orderDto.getOrderId()).orElse(null);
@@ -186,18 +192,43 @@ public class OrderServiceImpl implements OrderService {
         }
 
         //判断订单是否已经支付
-        if (!orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
-            log.info("[完结订单] 订单未支付! orderDto={}", orderDto);
-            throw new ResultException(ResultCodeEnum.ORDER_NOT_PAY);
-        }
+//        if (!orderMaster.getPayStatus().equals(PayStatusEnum.SUCCESS.getCode())) {
+//            log.info("[完结订单] 订单未支付! orderDto={}", orderDto);
+//            throw new ResultException(ResultCodeEnum.ORDER_NOT_PAY);
+//        }
         //完结订单
         orderMaster.setOrderStatus(OrderStatusEnum.FINISH.getCode());
         orderMasterRepository.save(orderMaster);
+        orderDto.setOrderStatus(OrderStatusEnum.FINISH.getCode());
         return orderDto;
     }
 
     @Override
+    @Transactional(rollbackFor = RuntimeException.class)
     public OrderDto paid(OrderDto orderDto) {
-        return null;
+        //查询订单
+        OrderMaster orderMaster = orderMasterRepository.findById(orderDto.getOrderId()).orElse(null);
+        if (orderMaster == null) {
+            log.info("[支付订单] 订单不存在! orderDto={}", orderDto);
+            throw new ResultException(ResultCodeEnum.ORDER_NOT_EXIST);
+        }
+
+        //判断订单状态
+        if (!orderMaster.getOrderStatus().equals(OrderStatusEnum.NEW.getCode())) {
+            log.info("[支付订单] 订单状态不正确! orderDto={}", orderDto);
+            throw new ResultException(ResultCodeEnum.ORDER_STATUS_ERROR);
+        }
+
+        //判断支付状态
+        if (!orderMaster.getPayStatus().equals(PayStatusEnum.WAIT.getCode())) {
+            log.info("[支付订单] 订单已经支付! orderDto={}", orderDto);
+            throw new ResultException(ResultCodeEnum.ORDER_PAYED);
+        }
+
+        //修改支付状态
+        orderMaster.setPayStatus(PayStatusEnum.SUCCESS.getCode());
+        orderMasterRepository.save(orderMaster);
+        orderDto.setPayStatus(PayStatusEnum.SUCCESS.getCode());
+        return orderDto;
     }
 }

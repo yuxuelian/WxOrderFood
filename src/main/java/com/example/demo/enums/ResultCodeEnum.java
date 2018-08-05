@@ -17,14 +17,29 @@ public enum ResultCodeEnum {
      */
     SUCCESS(0, "成功"),
 
+    /**
+     * 表单验证错误parameter
+     */
+    PARAMETER_CHECK_ERROR(900, "表单验证错误"),
+    PARAMETER_CART_EMPTY(901, "购物车为空"),
+
     /*------------请求出现错误-----------*/
     PRODUCT_NOT_EXIST(1, "商品不存在"),
     PRODUCT_STOCK_ERROR(2, "商品库存不足"),
-    ORDER_NOT_EXIST(3, "商品库存不足"),
-    ORDER_DETAIL_EMPTY(4, "商品库存不足"),
-    ORDER_NOT_PAY(5, "订单未支付,无法完结"),
-    ORDER_STATUS_ERROR(6, "订单状态不正确,无法完结"),
-    SERVICE_ERROR(-1, "内部服务器错误");
+    ORDER_NOT_EXIST(3, "订单不存在"),
+    ORDER_DETAIL_EMPTY(4, "订单详情为空"),
+    ORDER_NOT_PAY(5, "订单未支付"),
+    ORDER_STATUS_ERROR(6, "订单状态不正确"),
+    ORDER_UPDATE_FAIL(7, "订单更新失败"),
+    ORDER_PAYED(8, "订单已经支付，无需重新支付"),
+
+    /*--------------身份校验失败------------*/
+    OPENID_CHECK_ERROR(9, "身份校验失败"),
+
+    /**
+     * 服务器未知错误
+     */
+    SERVICE_ERROR(-1, "服务器未知错误");
 
     private final String message;
     private final Integer code;

@@ -2,6 +2,8 @@ package com.example.demo.exception;
 
 import com.example.demo.enums.ResultCodeEnum;
 
+import lombok.Getter;
+
 /**
  * @author Administrator
  * @date 2018/7/29 22:54
@@ -10,15 +12,18 @@ import com.example.demo.enums.ResultCodeEnum;
  * @description：
  */
 
+@Getter
 public class ResultException extends RuntimeException {
 
-    private ResultCodeEnum resultCodeEnum;
+    private Integer code;
 
     public ResultException(ResultCodeEnum resultCodeEnum) {
-        this.resultCodeEnum = resultCodeEnum;
+        super(resultCodeEnum.getMessage());
+        this.code = resultCodeEnum.getCode();
     }
 
-    public ResultCodeEnum getResultCodeEnum() {
-        return resultCodeEnum;
+    public ResultException(Integer code, String message) {
+        super(message);
+        this.code = code;
     }
 }
