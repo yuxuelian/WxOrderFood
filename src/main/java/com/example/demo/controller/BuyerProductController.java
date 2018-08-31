@@ -65,10 +65,4 @@ public class BuyerProductController {
         });
         return BaseResult.ofSuccess(productResultList);
     }
-
-    @GetMapping("/error")
-    public void error() {
-        int i = 1 / 0;
-    }
-
 }

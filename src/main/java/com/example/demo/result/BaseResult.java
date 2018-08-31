@@ -58,4 +58,10 @@ public class BaseResult<T> {
                 new Object());
     }
 
+    public static BaseResult<Object> ofError(Integer code, String message) {
+        return new BaseResult<>(code,
+                message,
+                new Object());
+    }
+
 }

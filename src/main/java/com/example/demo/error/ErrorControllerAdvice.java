@@ -30,7 +30,7 @@ public class ErrorControllerAdvice {
         ex.printStackTrace();
         if (ex instanceof ResultException) {
             //已知异常的情况下
-            return BaseResult.ofError(((ResultException) ex).getResultCodeEnum()).toString();
+            return BaseResult.ofError(((ResultException) ex).getCode(), ex.getMessage()).toString();
         }
         return BaseResult.ofError(ResultCodeEnum.SERVICE_ERROR).toString();
     }
