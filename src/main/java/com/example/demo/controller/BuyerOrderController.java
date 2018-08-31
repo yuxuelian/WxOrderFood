@@ -88,7 +88,7 @@ public class BuyerOrderController {
      * @param size
      * @return
      */
-    @GetMapping("list")
+    @GetMapping("/list")
     public BaseResult<List<OrderDto>> list(@RequestParam("openid") String openid,
                                            @RequestParam("page") Integer page,
                                            @RequestParam("size") Integer size) {
@@ -108,7 +108,7 @@ public class BuyerOrderController {
      * @param orderId
      * @return
      */
-    @GetMapping("detail")
+    @GetMapping("/detail")
     public BaseResult<OrderDto> detail(@RequestParam("openid") String openid,
                                        @RequestParam("orderId") String orderId) {
         if (StringUtils.isEmpty(openid)) {
@@ -130,7 +130,7 @@ public class BuyerOrderController {
      * @param orderId
      * @return
      */
-    @GetMapping("cancel")
+    @GetMapping("/cancel")
     public BaseResult<Object> cancel(@RequestParam("openid") String openid,
                                      @RequestParam("orderId") String orderId) {
         if (StringUtils.isEmpty(openid)) {

@@ -52,10 +52,10 @@ public class ProductCategoryRepositoryTest {
 
     @Test
     public void save() {
-        ProductCategory ex = new ProductCategory("新品", 4);
-        int id = productCategoryMapper.save(ex);
-        System.out.println("影响行数" + id);
-        System.out.println("自增主键id" + ex.getCategoryId());
+//        ProductCategory ex = new ProductCategory("新品", 4);
+//        int id = productCategoryMapper.save(ex);
+//        System.out.println("影响行数" + id);
+//        System.out.println("自增主键id" + ex.getCategoryId());
 
 //        ProductCategory save = repository.save(ex);
 //        System.out.println(save);

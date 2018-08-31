@@ -31,14 +31,14 @@ public class OrderMasterRepositoryTest {
 
     @Test
     public void save() {
-        OrderMaster orderMaster = new OrderMaster();
-        orderMaster.setOrderId("123457");
-        orderMaster.setBuyerName("师兄");
-        orderMaster.setBuyerPhone("17323200861");
-        orderMaster.setBuyerAddress("成都市武侯区");
-        orderMaster.setBuyerOpenid(OPEN_ID);
-        orderMaster.setOrderAmount(new BigDecimal(2.5));
-        repository.save(orderMaster);
+//        OrderMaster orderMaster = new OrderMaster();
+//        orderMaster.setOrderId("123457");
+//        orderMaster.setBuyerName("师兄");
+//        orderMaster.setBuyerPhone("17323200861");
+//        orderMaster.setBuyerAddress("成都市武侯区");
+//        orderMaster.setBuyerOpenid(OPEN_ID);
+//        orderMaster.setOrderAmount(new BigDecimal(2.5));
+//        repository.save(orderMaster);
     }
 
     @Test
