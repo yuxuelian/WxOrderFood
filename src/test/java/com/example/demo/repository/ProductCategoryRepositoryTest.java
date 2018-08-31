@@ -69,7 +69,6 @@ public class ProductCategoryRepositoryTest {
         }
     }
 
-
     @Test
     public void findByCategoryTypeIn() {
         List<Integer> categoryTypeList = new ArrayList<>();

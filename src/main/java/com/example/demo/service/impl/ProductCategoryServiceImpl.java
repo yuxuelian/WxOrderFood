@@ -23,7 +23,6 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Autowired
     private ProductCategoryRepository repository;
 
-
     @Override
     public ProductCategory findOne(Integer categoryId) {
         return repository.findById(categoryId).orElse(null);

@@ -11,14 +11,8 @@ spring:
     url: jdbc:mysql://118.126.108.24:3306/wx_order_food?useSSL=false&characterEncode=UTF-8
   jpa:
     show-sql: true
-
-#mybatis.config-location=classpath:mybatis-config.xml
-#mybatis.mapper-locations=classpath:/mapper/**/*.xml
-#mybatis.type-aliases-package=com.example.demo.repository.dao
-
 mybatis:
   config-location: classpath:mybatis-config.xml
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.example.demo.repository.dao
-
 
