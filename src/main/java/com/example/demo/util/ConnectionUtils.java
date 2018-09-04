@@ -12,7 +12,7 @@ import java.util.Collection;
 
 public class ConnectionUtils {
 
-    public static <T> boolean isEmpty(Collection<T> collection) {
+    public static boolean isEmpty(Collection collection) {
         if (collection == null) {
             return true;
         }

@@ -2,6 +2,8 @@ package com.example.demo.simulate;
 
 import java.util.List;
 
+import lombok.Data;
+
 /**
  * @author kaibo
  * @date 2018/8/31 10:12
@@ -10,36 +12,14 @@ import java.util.List;
  * @description：
  */
 
+@Data
 public class SimulateData {
 
     private SellerBean seller;
     private List<GoodsBean> goods;
     private List<RatingsBean> ratings;
 
-    public SellerBean getSeller() {
-        return seller;
-    }
-
-    public void setSeller(SellerBean seller) {
-        this.seller = seller;
-    }
-
-    public List<GoodsBean> getGoods() {
-        return goods;
-    }
-
-    public void setGoods(List<GoodsBean> goods) {
-        this.goods = goods;
-    }
-
-    public List<RatingsBean> getRatings() {
-        return ratings;
-    }
-
-    public void setRatings(List<RatingsBean> ratings) {
-        this.ratings = ratings;
-    }
-
+    @Data
     public static class SellerBean {
         /**
          * name : 粥品香坊（回龙观）
@@ -77,134 +57,7 @@ public class SimulateData {
         private List<String> pics;
         private List<String> infos;
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
-        }
-
-        public int getDeliveryTime() {
-            return deliveryTime;
-        }
-
-        public void setDeliveryTime(int deliveryTime) {
-            this.deliveryTime = deliveryTime;
-        }
-
-        public double getScore() {
-            return score;
-        }
-
-        public void setScore(double score) {
-            this.score = score;
-        }
-
-        public double getServiceScore() {
-            return serviceScore;
-        }
-
-        public void setServiceScore(double serviceScore) {
-            this.serviceScore = serviceScore;
-        }
-
-        public double getFoodScore() {
-            return foodScore;
-        }
-
-        public void setFoodScore(double foodScore) {
-            this.foodScore = foodScore;
-        }
-
-        public double getRankRate() {
-            return rankRate;
-        }
-
-        public void setRankRate(double rankRate) {
-            this.rankRate = rankRate;
-        }
-
-        public int getMinPrice() {
-            return minPrice;
-        }
-
-        public void setMinPrice(int minPrice) {
-            this.minPrice = minPrice;
-        }
-
-        public int getDeliveryPrice() {
-            return deliveryPrice;
-        }
-
-        public void setDeliveryPrice(int deliveryPrice) {
-            this.deliveryPrice = deliveryPrice;
-        }
-
-        public int getRatingCount() {
-            return ratingCount;
-        }
-
-        public void setRatingCount(int ratingCount) {
-            this.ratingCount = ratingCount;
-        }
-
-        public int getSellCount() {
-            return sellCount;
-        }
-
-        public void setSellCount(int sellCount) {
-            this.sellCount = sellCount;
-        }
-
-        public String getBulletin() {
-            return bulletin;
-        }
-
-        public void setBulletin(String bulletin) {
-            this.bulletin = bulletin;
-        }
-
-        public String getAvatar() {
-            return avatar;
-        }
-
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
-        }
-
-        public List<SupportsBean> getSupports() {
-            return supports;
-        }
-
-        public void setSupports(List<SupportsBean> supports) {
-            this.supports = supports;
-        }
-
-        public List<String> getPics() {
-            return pics;
-        }
-
-        public void setPics(List<String> pics) {
-            this.pics = pics;
-        }
-
-        public List<String> getInfos() {
-            return infos;
-        }
-
-        public void setInfos(List<String> infos) {
-            this.infos = infos;
-        }
-
+        @Data
         public static class SupportsBean {
             /**
              * type : 0
@@ -213,25 +66,10 @@ public class SimulateData {
 
             private int type;
             private String description;
-
-            public int getType() {
-                return type;
-            }
-
-            public void setType(int type) {
-                this.type = type;
-            }
-
-            public String getDescription() {
-                return description;
-            }
-
-            public void setDescription(String description) {
-                this.description = description;
-            }
         }
     }
 
+    @Data
     public static class GoodsBean {
         /**
          * name : 热销榜
@@ -243,30 +81,7 @@ public class SimulateData {
         private int type;
         private List<FoodsBean> foods;
 
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public int getType() {
-            return type;
-        }
-
-        public void setType(int type) {
-            this.type = type;
-        }
-
-        public List<FoodsBean> getFoods() {
-            return foods;
-        }
-
-        public void setFoods(List<FoodsBean> foods) {
-            this.foods = foods;
-        }
-
+        @Data
         public static class FoodsBean {
             /**
              * name : 皮蛋瘦肉粥
@@ -292,86 +107,7 @@ public class SimulateData {
             private String image;
             private List<RatingsBean> ratings;
 
-            public String getName() {
-                return name;
-            }
-
-            public void setName(String name) {
-                this.name = name;
-            }
-
-            public int getPrice() {
-                return price;
-            }
-
-            public void setPrice(int price) {
-                this.price = price;
-            }
-
-            public String getOldPrice() {
-                return oldPrice;
-            }
-
-            public void setOldPrice(String oldPrice) {
-                this.oldPrice = oldPrice;
-            }
-
-            public String getDescription() {
-                return description;
-            }
-
-            public void setDescription(String description) {
-                this.description = description;
-            }
-
-            public int getSellCount() {
-                return sellCount;
-            }
-
-            public void setSellCount(int sellCount) {
-                this.sellCount = sellCount;
-            }
-
-            public int getRating() {
-                return rating;
-            }
-
-            public void setRating(int rating) {
-                this.rating = rating;
-            }
-
-            public String getInfo() {
-                return info;
-            }
-
-            public void setInfo(String info) {
-                this.info = info;
-            }
-
-            public String getIcon() {
-                return icon;
-            }
-
-            public void setIcon(String icon) {
-                this.icon = icon;
-            }
-
-            public String getImage() {
-                return image;
-            }
-
-            public void setImage(String image) {
-                this.image = image;
-            }
-
-            public List<RatingsBean> getRatings() {
-                return ratings;
-            }
-
-            public void setRatings(List<RatingsBean> ratings) {
-                this.ratings = ratings;
-            }
-
+            @Data
             public static class RatingsBean {
                 /**
                  * username : 3******c
@@ -386,50 +122,11 @@ public class SimulateData {
                 private int rateType;
                 private String text;
                 private String avatar;
-
-                public String getUsername() {
-                    return username;
-                }
-
-                public void setUsername(String username) {
-                    this.username = username;
-                }
-
-                public long getRateTime() {
-                    return rateTime;
-                }
-
-                public void setRateTime(long rateTime) {
-                    this.rateTime = rateTime;
-                }
-
-                public int getRateType() {
-                    return rateType;
-                }
-
-                public void setRateType(int rateType) {
-                    this.rateType = rateType;
-                }
-
-                public String getText() {
-                    return text;
-                }
-
-                public void setText(String text) {
-                    this.text = text;
-                }
-
-                public String getAvatar() {
-                    return avatar;
-                }
-
-                public void setAvatar(String avatar) {
-                    this.avatar = avatar;
-                }
             }
         }
     }
 
+    @Data
     public static class RatingsBean {
         /**
          * username : 3******c
@@ -450,69 +147,5 @@ public class SimulateData {
         private String text;
         private String avatar;
         private List<String> recommend;
-
-        public String getUsername() {
-            return username;
-        }
-
-        public void setUsername(String username) {
-            this.username = username;
-        }
-
-        public long getRateTime() {
-            return rateTime;
-        }
-
-        public void setRateTime(long rateTime) {
-            this.rateTime = rateTime;
-        }
-
-        public int getDeliveryTime() {
-            return deliveryTime;
-        }
-
-        public void setDeliveryTime(int deliveryTime) {
-            this.deliveryTime = deliveryTime;
-        }
-
-        public int getScore() {
-            return score;
-        }
-
-        public void setScore(int score) {
-            this.score = score;
-        }
-
-        public int getRateType() {
-            return rateType;
-        }
-
-        public void setRateType(int rateType) {
-            this.rateType = rateType;
-        }
-
-        public String getText() {
-            return text;
-        }
-
-        public void setText(String text) {
-            this.text = text;
-        }
-
-        public String getAvatar() {
-            return avatar;
-        }
-
-        public void setAvatar(String avatar) {
-            this.avatar = avatar;
-        }
-
-        public List<String> getRecommend() {
-            return recommend;
-        }
-
-        public void setRecommend(List<String> recommend) {
-            this.recommend = recommend;
-        }
     }
 }
